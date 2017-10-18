@@ -1,0 +1,157 @@
+@mixin ling{
+    margin: 0;
+    padding: 0;
+}
+@mixin fs($fs){
+    font-size: $fs;
+}
+@mixin fudong{
+    overflow: hidden;
+}
+@mixin lidd{
+    list-style: none;
+}
+@mixin axlx{
+    text-decoration: none;
+}
+@mixin wg($width,$height){
+    width: $width;
+    height: $height;
+}
+@mixin pdTop($top){
+    padding-top: $top;
+}
+@mixin pdLeft($left){
+    padding-left: $left;
+}
+@mixin padd($top,$right,$bottom,$left){
+    padding: $top $right $bottom $left;
+}
+@mixin background($color){
+    background-color: $color;
+}
+@mixin color($color){
+    color: $color;
+}
+@mixin border_1px($color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        left: 0.24rem;
+        bottom: 0;
+        width:1.12rem;
+        border-top: 1px solid $color;
+        content: ' '
+    }
+}
+@mixin border_2px($color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        left: 0.24rem;
+        bottom: 0;
+        width:1.12rem;
+        border-top: 1px solid $color;
+        content: ' '
+    }
+}
+@mixin dingwei($dw,$top,$right,$bottom,$left){
+    @if($dw == 1){
+        position: relative;
+    }
+    @if($dw == 2){
+        position: absolute;
+        
+         @if($left){
+           left: $left; 
+        }@else{
+            left: auto;
+        }
+        @if($top){
+            top: $top;
+        }@else{
+            top: auto;
+        }
+        
+        @if($right){
+            right: $right;
+        }@else{
+            right: auto;
+        } 
+
+        @if($bottom){
+            bottom: $bottom;
+        }@else{
+            bottom: auto;
+        } 
+    }
+    @if($dw == 3){
+        position: fixed;
+        top: $top;
+        left: $left;
+    }
+}
+@mixin ol($color){
+    outline: 1px solid $color;
+}
+@mixin fd{
+    overflow: hidden;
+}
+@mixin float($fd){
+    @if($fd == 1){
+        float: left;
+    }@else{
+        float: right;
+    }
+}
+@mixin bg{
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin bg-img($url){
+    background-image: url('../../../static/resource/img/'+$url+'@2x.png');
+    @media(-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+        background-image: url('../../../static/resource/img/'+$url+'@3x.png');
+    }
+}
+@mixin ml($ml){
+    margin-left: $ml;
+}
+@mixin mt($mt){
+    margin-top: $mt;
+}
+@mixin mr($mr){
+    margin-right: $mr;
+}
+@mixin mb($mb){
+    margin-bottom: $mb;
+}
+@mixin margin($margin){
+    margin:$margin auto;
+}
+@mixin margins($top,$right,$bottom,$left){
+    margin:$top $right $bottom $left;
+}
+@mixin ta{
+    text-align: center;
+}
+@mixin lh($lh){
+    line-height: $lh;
+}
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}

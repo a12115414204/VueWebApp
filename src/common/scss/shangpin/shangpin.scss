@@ -1,0 +1,72 @@
+.caidan{
+    @include dingwei(2,3.48rem,auto,0.92rem,auto);
+    @include ol(red);
+    display: flex;
+    @include wg(100%,auto);
+    @include fd;
+    .caidan_left{
+        flex: 0 0 1.6rem;
+        @include wg(1.6rem,auto);
+        
+        .caidan_left_item{
+            display: table;
+            @include wg(1.6rem,1.08rem);
+            color: rgb(240, 20, 20);
+            font-weight: 200;
+            @include lh(0.28rem);
+            @include background(rgb(243,245,247));
+            .caidan_text{
+                display: table-cell;
+                vertical-align: middle;
+                @include fs(0.24rem);
+                @include wg(1.12rem,auto);
+                padding: 0 0.24rem 0 0.24rem;
+                @include border_1px(rgba(7,17,27,0.1));
+                .icon{
+                    display: inline-block;
+                    @include wg(0.24rem,0.24rem);
+                    margin-right: 0.02rem;
+                    @include bg;
+                    vertical-align: top;
+        
+                    &.decrease{
+                      @include bg-img('decrease_3');
+                    }
+                    &.discount{
+                      @include bg-img('discount_3');
+                    }
+                    &.guarantee{
+                      @include bg-img('guarantee_3');
+                    }
+                    &.invoice{
+                      @include bg-img('invoice_3');
+                    }
+                    &.special{
+                      @include bg-img('special_3');
+                    }
+                }
+            }
+        }
+
+    }
+    .caidan_right{
+        flex: 1;
+        .caidan_right_title{
+            @include pdLeft(0.28rem);
+            @include fs(0.24rem);
+            @include wg(auto,0.52rem);
+            color: rgb(147,153,159);
+            @include lh(0.52rem);
+            font-weight: 700;
+            text-align:left;
+            border-left: 0.04rem solid #d9dde1;
+            @include background(#f3f5f7);
+        }
+        ul{
+            .caidan_right_food{
+                display: flex;
+                @include margins(0.36rem,0.36rem,0.36rem,0.36rem);
+            }
+        }
+    }
+  }
